@@ -3,6 +3,8 @@ var mongourl = 'mongodb://localhost/test';
 var express = require('express');
 var app = express();
 
+var PORT = 1000;
+
 var mongoose = require('mongoose');
 mongoose.connect(mongourl);
 
@@ -25,6 +27,6 @@ db.once('open', function callback() {
     app.use(express.json());
     app.use(express.urlencoded());
 
-    app.listen(4000);
-    console.log('listening on port 4000');
+    app.listen(PORT);
+    console.log('listening on port ' + PORT);
 });
