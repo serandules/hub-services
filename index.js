@@ -1,3 +1,4 @@
+var debug = require('debug')('serandules-hub-services');
 var mongourl = 'mongodb://localhost/test';
 
 var express = require('express');
@@ -11,7 +12,7 @@ mongoose.connect(mongourl);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback() {
-    console.log('connected to mongodb : ' + mongourl);
+    debug('connected to mongodb : ' + mongourl);
     /*app.use(require('auth')({
         open: [
             '^(?!\\/apis(\\/|$)).+',
@@ -26,5 +27,5 @@ db.once('open', function callback() {
     app.use(express.urlencoded());
 
     app.listen(PORT);
-    console.log('listening on port ' + PORT);
+    debug('listening on port ' + PORT);
 });
