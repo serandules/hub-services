@@ -1,4 +1,4 @@
-var debug = require('debug')('serandules-hub-services');
+var debug = require('debug')('serandules:hub-services');
 var mongourl = 'mongodb://localhost/test';
 
 var express = require('express');

@@ -1,4 +1,4 @@
-var debug = require('debug')('serandules-hub-services');
+var debug = require('debug')('serandules:hub-services');
 var express = require('express');
 var app = module.exports = express();
 
